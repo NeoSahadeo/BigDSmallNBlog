@@ -3,6 +3,7 @@ title: 'Hello, World!'
 date: '18-01-2024'
 author: 'Neo Sahadeo'
 description: 'Our first ever blog post.'
+categories: ['other', 'life experiences', discussion']
 ---
 
 ## Welcome to the blog

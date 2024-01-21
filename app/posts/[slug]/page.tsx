@@ -8,12 +8,7 @@ import html from 'remark-html';
 
 export function generateStaticParams() {
   let posts = GetSortedPosts()
-    return posts.map(post =>{ 
-      if (post) {
-        return { slug: post.id}
-      }
-    })
-}
+    return posts.map(post =>{ return { slug: post.id} }) }
 
 async function generatePage({ params }: { params: { slug: string } }) {
   const fullPath = path.join(postsDirectory, params.slug)+'.md'
@@ -23,10 +18,12 @@ async function generatePage({ params }: { params: { slug: string } }) {
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  console.log(matterResult.data.categories)
   return (
-    <main>
+    <main className='pl-4 pr-4 sm:pl-0 sm:pr-0'>
       <meta name='description' content={matterResult.data.description}></meta>
       <meta name='author' content={matterResult.data.author}></meta>
+      <meta name='keywords' content={matterResult.data.categories}></meta>
       <title>{matterResult.data.title}</title>
       <section className='pl-2 pr-2 sm:pl-0 sm:pr-0'>
         <h1 style={{marginBottom: '0rem'}}>{matterResult.data.title}</h1>

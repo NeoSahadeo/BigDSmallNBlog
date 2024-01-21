@@ -3,6 +3,7 @@ import { Zilla_Slab } from 'next/font/google'
 import { Roboto_Mono } from 'next/font/google'
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider"
 
 const zilla_slab = Zilla_Slab({
@@ -27,8 +28,9 @@ return (
           attribute="class"
           defaultTheme="system"
         >
-          <Header></Header>
+          <Header/>
           {children}
+          <Footer/> 
         </ThemeProvider>
       </body>
     </html>

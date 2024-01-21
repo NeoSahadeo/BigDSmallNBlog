@@ -6,7 +6,7 @@ import GetSortedPosts from './utils/marky';
 export default function Page() {
    let posts = GetSortedPosts()
   return (
-  <main>
+  <main className='pl-4 pr-4 sm:pl-0 sm:pr-0'>
     <section>
       <h1>Big D and Small N&apos;s Blog</h1>
         <ul className={styles.ul}>
