@@ -16,20 +16,21 @@ export default function Home({posts}: HomeProps) {
         <section>
         <h1>Big D and Small N&apos;s Blog</h1>
         <Search posts={posts} setPostsToDisplay={setPostsToDisplay}/>
+        <br/>
         <ul id='blogPosts' className={styles.ul}>
         {postsToDisplay.map((post: Post) => {
             return (
                 <li className={`${styles.li} `} key={post.id}>
                   <Link className='flex flex-col' href={'posts/'+post.id}>
                     <span className='justify-between flex w-100'>
-                    <span>
+                    <span className='font-light'>
                     {post.title}
                     </span>            
                     <span>
                     {post.date}
                     </span>
                     </span>
-                    <span className='italic'>
+                    <span className='italic mt-1'>
                     {post.description}
                     </span>
                   </Link>

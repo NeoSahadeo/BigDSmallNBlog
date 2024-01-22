@@ -3,7 +3,7 @@ title: 'How to Make Posts'
 date: '22-01-204'
 author: 'Neo Sahadeo'
 description: 'A step-by-step process to write a blog for this site. [A very archaic method]'
-categories: ['', '', '']
+categories: ['tutorial', 'damian', 'bespoke', 'quick', 'unrelated']
 ---
 <img src="https://images.rawpixel.com/image_600/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMi0wMDIyLWpqLmpwZw.jpg" style="object-fit: cover; max-height: 400px; width: 100%; object-position: 0 1rem" title="Ara Canga from Natural History of Parrots (1801—1805) by Francois Levaillant.:">
 

@@ -7,6 +7,7 @@ export interface Post {
   date: string,
   title: string,
   description: string,
+  categories: string[],
 }
 
 export const postsDirectory = path.join(process.cwd(), 'posts')
@@ -32,6 +33,7 @@ export default function GetSortedPosts(): Post[] {
       date: matterResult.date,
       title: matterResult.title,
       description: matterResult.description,
+      categories: matterResult.categories,
     }
   })
   
