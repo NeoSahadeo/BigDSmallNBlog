@@ -3,22 +3,18 @@ import { postsDirectory } from '../../utils/marky'
 import fs from 'fs'
 import path from 'path'
 import matter, {language} from 'gray-matter'
-import { remark } from 'remark';
-import html from 'remark-html';
+import { marked } from 'marked'
 
 export function generateStaticParams() {
   let posts = GetSortedPosts()
-    return posts.map(post =>{ return { slug: post.id} }) }
+    return posts.map(post=>{return{slug:post.id}})}
 
 async function generatePage({ params }: { params: { slug: string } }) {
   const fullPath = path.join(postsDirectory, params.slug)+'.md'
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-  console.log(matterResult.data.categories)
+  const contents = marked.parse(matterResult.content)
+
   return (
     <main className='pl-4 pr-4 sm:pl-0 sm:pr-0'>
       <meta name='description' content={matterResult.data.description}></meta>
@@ -31,7 +27,7 @@ async function generatePage({ params }: { params: { slug: string } }) {
         <p>{matterResult.data.author}</p>
         <p style={{marginBottom: '1rem'}}>{matterResult.data.date}</p>
         <hr className='bg-gray-300'></hr>
-        <article dangerouslySetInnerHTML={{__html: contentHtml}}>
+        <article dangerouslySetInnerHTML={{__html: contents}}>
         </article>
       </section>
     </main>
