@@ -22,8 +22,18 @@ git clone https://github.com/NeoSahadeo/BigDSmallNBlog
 
 ## Step 2
 Create a new markdown file in the app/posts/ folder. Be careful, just like every modern child, this is it's identity (your operating system should stop you from creating a duplicated file).
+
 ## Step 3
 Copy the text from the template.md and paste that into the newly created file.
+
+## Step 4
+Update all the values in between the triple dashes.
+
+## Step 5
+WRITE THE BLOG!
+
+## Step 6
+Add the changes and push to the git repo.
 
 # Conclusion
 By now, you should be a full fledged MarkDown developer. If not... well that's OK. Hopefully you can now create posts on this site (assuming you can actually push to the repo).
