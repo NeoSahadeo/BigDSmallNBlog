@@ -18,6 +18,6 @@ Don't know! Just have a read through our ever-expanding catalogue until you find
 ## Conclusion
 Thnx for the read. It was a really short article. So here is a picture of a cat.
 
-&nbsp;
+<br>
 
 ![image](https://pbs.twimg.com/media/GDcBWhfXAAAovbR.jpg "Gigachad Cat") 

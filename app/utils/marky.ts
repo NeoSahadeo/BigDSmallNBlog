@@ -1,9 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import {Files} from 'lucide-react'
 
-interface Post {
+export interface Post {
   id: string,
   date: string,
   title: string,
@@ -12,7 +11,14 @@ interface Post {
 
 export const postsDirectory = path.join(process.cwd(), 'app', 'posts')
 
-export default function GetSortedPosts() {
+export default function GetSortedPosts(): Post[] {
+  /**
+   * Uses Nodejs fs to get all files and sort them based on date and markdown (file type); 
+   * the directory is based on postsDirectory
+   *
+   * @returns Type:post array
+   *
+   */
   let filenames: string[] = fs.readdirSync(postsDirectory)
   filenames = filenames.filter(element => element.endsWith('.md'))
   

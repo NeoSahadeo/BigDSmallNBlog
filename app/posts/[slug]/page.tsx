@@ -2,14 +2,17 @@ import GetSortedPosts from '../../utils/marky'
 import { postsDirectory } from '../../utils/marky'
 import fs from 'fs'
 import path from 'path'
-import matter, {language} from 'gray-matter'
+import matter from 'gray-matter'
 import { marked } from 'marked'
 
 export function generateStaticParams() {
   let posts = GetSortedPosts()
-    return posts.map(post=>{return{slug:post.id}})}
+  return posts.map(post=>{
+    return{slug:post.id}
+  })
+}
 
-async function generatePage({ params }: { params: { slug: string } }) {
+export default async function generatePage({ params }: { params: { slug: string } }) {
   const fullPath = path.join(postsDirectory, params.slug)+'.md'
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
@@ -32,8 +35,4 @@ async function generatePage({ params }: { params: { slug: string } }) {
       </section>
     </main>
     )
-}
-
-export default async function Page({ params }: { params: { slug: string } }) {
-  return generatePage({params})
 }
