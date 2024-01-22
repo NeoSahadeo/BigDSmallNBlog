@@ -1,6 +1,6 @@
 ---
 title: 'How to Make Posts'
-date: '22-01-204'
+date: '22-01-2024'
 author: 'Neo Sahadeo'
 description: 'A step-by-step process to write a blog for this site. [A very archaic method]'
 categories: ['tutorial', 'damian', 'bespoke', 'quick', 'unrelated']
