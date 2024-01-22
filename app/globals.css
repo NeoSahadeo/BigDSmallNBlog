@@ -108,3 +108,12 @@ h1 {
 .white {
   fill: white;
 }
+
+pre, code {
+  font-family: var(--font-roboto-mono); 
+}
+pre {
+  border: 1px solid;
+  padding: 0.4rem 0.4rem;
+  border-radius: 0.2rem;
+}
