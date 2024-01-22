@@ -9,7 +9,7 @@ export interface Post {
   description: string,
 }
 
-export const postsDirectory = path.join(process.cwd(), 'app', 'posts')
+export const postsDirectory = path.join(process.cwd(), 'posts')
 
 export default function GetSortedPosts(): Post[] {
   /**

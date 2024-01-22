@@ -21,7 +21,7 @@ git clone https://github.com/NeoSahadeo/BigDSmallNBlog
 ```
 
 ## Step 2
-Create a new markdown file in the app/posts/ folder. Be careful, just like every modern child, this is it's identity (your operating system should stop you from creating a duplicated file).
+Create a new markdown file in the posts/ folder (your operating system should stop you from creating a duplicated file).
 
 ## Step 3
 Copy the text from the template.md and paste that into the newly created file.

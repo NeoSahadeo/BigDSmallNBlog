@@ -1,4 +1,4 @@
-import GetSortedPosts from './utils/marky';
+import GetSortedPosts from '@/utils/marky';
 import Home from './home';
 
 const posts = GetSortedPosts()

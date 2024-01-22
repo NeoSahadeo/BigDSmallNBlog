@@ -1,7 +1,7 @@
 'use client';
 import {BaseSyntheticEvent} from 'react';
 import styles from './search.module.css'
-import { Post } from '@/app/utils/marky';
+import { Post } from '@/utils/marky';
 import { Search as SearchSVG } from 'lucide-react';
 
 const search = (e:BaseSyntheticEvent, posts: Post[]) => {

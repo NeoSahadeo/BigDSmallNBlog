@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Search from '@/components/search';
 import styles from './page.module.css'
 import { useState } from 'react';
-import { Post } from './utils/marky';
+import { Post } from '@/utils/marky';
 
 type HomeProps = {
   posts: Post[]
