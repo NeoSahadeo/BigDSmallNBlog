@@ -14,7 +14,7 @@ export default function Home({posts}: HomeProps) {
     return (
         <main className='pl-4 pr-4 sm:pl-0 sm:pr-0'>
         <section>
-        <h1>Big D and Small N&apos;s Blog</h1>
+        <h1 className='title'>Big D and Small N&apos;s Blog</h1>
         <Search posts={posts} setPostsToDisplay={setPostsToDisplay}/>
         <br/>
         <ul id='blogPosts' className={styles.ul}>
