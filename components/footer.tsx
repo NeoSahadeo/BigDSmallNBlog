@@ -37,11 +37,8 @@ export default function Footer() {
     <footer className={`border-t-2 p-5 flex flex-row gap-5 justify-between`}>
       <div className="flex items-center gap-5">
         {socialsToDisplay.map((item) => (
-          <>
-            <div
-              key={item.person}
-              className="flex items-center justify-center gap-5"
-            >
+          <div key={item.person} className="flex items-center gap-5">
+            <div className="flex items-center justify-center gap-5">
               <span className="text-lg">{`${item.person}:`}</span>
 
               <div className="flex items-center">
@@ -58,7 +55,7 @@ export default function Footer() {
               </div>
             </div>
             <Separator orientation="vertical" className="h-7" />
-          </>
+          </div>
         ))}
       </div>
       <div className="font-bold flex items-center">
