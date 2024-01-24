@@ -27,9 +27,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${zilla_slab.className} dark:text-gray-300`}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <div className="flex flex-col min-h-screen gap-5">
+          <div className="flex flex-col h-screen gap-5">
             <Header />
-            <div className="grow">{children}</div>
+            <div className="grow flex justify-center overflow-auto">
+              {children}
+            </div>
             <Footer />
           </div>
         </ThemeProvider>
