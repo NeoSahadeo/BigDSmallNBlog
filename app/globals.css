@@ -74,9 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+* {
+  --default-primary-light: #363636;
+}
 
 body {
-  color: #363636;
+  color: var(--default-primary-light);
 }
 .body-dark {
   color: white !important;
@@ -102,6 +105,12 @@ h1, h2, h3, h4, h5, h6{
   font-weight: bold;
   margin: 1rem 0 0.1rem 0rem;
 }
+h1 { font-size: 2.4rem;}
+h2 { font-size: 2rem;}
+h3 { font-size: 1.7rem;}
+h4 { font-size: 1.4rem;}
+h5 { font-size: 1.2rem;}
+h6 { font-size: 1rem;}
 
 .title {
   font-size: 2.5rem;
@@ -119,5 +128,19 @@ pre {
   padding: 0.4rem 0.4rem;
   border-radius: 0.2rem;
   overflow-x: auto;
-  margin-top: 0.3rem;
+  margin: 0.3rem 0;
+}
+blockquote {
+  padding: 1rem 1rem 1rem 1rem;
+/*   border-radius: 0.2rem; */
+  /* -webkit-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.51);
+  -moz-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.51);
+  box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.51); */
+  margin: 0.3rem 0;
+  border-left: 0.3rem solid var(--default-primary-light);
+}
+html[class='dark']{  
+  blockquote {
+    border-color: white;
+  }
 }
