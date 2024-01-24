@@ -29,9 +29,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system">
           <div className="flex flex-col h-screen gap-5">
             <Header />
-            <div className="grow flex justify-center overflow-auto">
+            <section className="grow flex justify-center overflow-auto">
               {children}
-            </div>
+            </section>
             <Footer />
           </div>
         </ThemeProvider>
