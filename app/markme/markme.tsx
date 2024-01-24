@@ -6,7 +6,7 @@ import { BaseSyntheticEvent, Dispatch, SetStateAction } from "react";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input";
 
-import { saveFile } from "./page";
+import { saveFile } from "@/utils/saveFile";
 
 interface HTMLElementNew extends HTMLElement {
   value?: string
@@ -18,7 +18,7 @@ async function updatePreview (e: BaseSyntheticEvent, setPreview: Dispatch<SetSta
   setPreview(parsedContent)
 }
 
-export default function MarkMe() {
+export function MarkMe() {
   const [preview, setPreview] = useState('')
   return (
     <main className="flex items-center justify-start">
