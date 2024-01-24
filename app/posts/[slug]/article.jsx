@@ -9,17 +9,17 @@ export default function Article({matterResult, content}) {
      changing it any time soon. :''')
   */
   const [contentState, setContentState] = useState(content)
-  
+
   useEffect(()=>{
     const parser = new DOMParser();
     const dom = parser.parseFromString(contentState, "text/html")
     const codeBlocks = dom.querySelectorAll('pre > code')
-    console.log(codeBlocks.length)
-    let index = 0 
-    for (; index < codeBlocks.length; index++){
-      codeBlocks[index].innerHTML = hljs.highlightAuto(
-        codeBlocks[index].innerHTML
+    console.log(codeBlocks)
+    for (let index = 0; index < codeBlocks.length; index++){
+      let highlighted = hljs.highlightAuto(
+        codeBlocks[index].innerText
       ).value
+      codeBlocks[index].innerHTML = highlighted
     }
     setContentState(dom.querySelector('body').innerHTML)
   }, [])
