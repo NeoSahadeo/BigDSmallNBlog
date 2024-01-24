@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function ModeToggle() {
+export function ThemeToggler() {
   const { setTheme } = useTheme()
 
   return (
@@ -24,13 +24,22 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")} className='font-bold'>
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className="font-bold"
+        >
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")} className='font-bold'>
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className="font-bold"
+        >
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")} className='font-bold'>
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className="font-bold"
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
