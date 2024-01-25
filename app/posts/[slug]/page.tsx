@@ -3,6 +3,7 @@ import { marked } from "marked"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Metadata } from "next"
 import useFileContents from "@/hooks/useFileContents"
+import Markdown from "markdown-to-jsx"
 
 interface PageProps {
   params: { slug: string }
@@ -46,8 +47,22 @@ export default async function BlogPage({ params }: PageProps) {
           {/* <article
             dangerouslySetInnerHTML={{ __html: parsedFileContents }}
           ></article> */}
-          <article>{parsedFileContents}</article>
+          {/* <article>{parsedFileContents}</article> */}
         </section>
+
+        <Markdown
+        // options={{
+        //   overrides: {
+        //     p: {
+        //       props: {
+        //         className: "text-blue-500",
+        //       },
+        //     },
+        //   },
+        // }}
+        >
+          {parsedFileContents as string}
+        </Markdown>
       </ScrollArea>
     </div>
   )
