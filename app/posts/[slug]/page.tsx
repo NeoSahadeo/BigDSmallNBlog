@@ -1,10 +1,12 @@
 import GetSortedPosts from "@/utils/marky"
-import { postsDirectory } from "@/utils/marky"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
 import { marked } from "marked"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Metadata } from "next"
+import useFileContents from "@/hooks/useFileContents"
+
+interface PageProps {
+  params: { slug: string }
+}
 
 export function generateStaticParams() {
   let posts = GetSortedPosts()
@@ -13,33 +15,38 @@ export function generateStaticParams() {
   })
 }
 
-export default async function generatePage({
+export async function generateMetadata({
   params,
-}: {
-  params: { slug: string }
-}) {
-  const fullPath = path.join(postsDirectory, params.slug) + ".md"
-  const fileContents = fs.readFileSync(fullPath, "utf8")
-  const matterResult = matter(fileContents)
-  const contents = marked.parse(matterResult.content)
+}: PageProps): Promise<Metadata> {
+  const { data: metadata } = useFileContents(params.slug)
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    authors: metadata.author,
+    keywords: metadata.categories,
+  }
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { data: metadata, content } = useFileContents(params.slug)
+  const parsedFileContents = marked.parse(content)
 
   return (
     <div className="flex flex-col items-center px-4 grow gap-7 ">
-      <meta name="description" content={matterResult.data.description}></meta>
-      <meta name="author" content={matterResult.data.author}></meta>
-      <meta name="keywords" content={matterResult.data.categories}></meta>
-      <title>{matterResult.data.title}</title>
-
       <ScrollArea className="px-5">
         <section className="px-2 sm:px-0 flex flex-col gap-1">
-          <h1 className="text-5xl font-bold">{matterResult.data.title}</h1>
+          <h1 className="text-5xl font-bold">{metadata.title}</h1>
           <p style={{ marginBottom: "0.5rem" }}>
-            <i>{matterResult.data.description}</i>
+            <i>{metadata.description}</i>
           </p>
-          <p>{matterResult.data.author}</p>
-          <p style={{ marginBottom: "1rem" }}>{matterResult.data.date}</p>
+          <p>{metadata.author}</p>
+          <p style={{ marginBottom: "1rem" }}>{metadata.date}</p>
           <hr className="bg-gray-300"></hr>
-          <article dangerouslySetInnerHTML={{ __html: contents }}></article>
+          {/* <article
+            dangerouslySetInnerHTML={{ __html: parsedFileContents }}
+          ></article> */}
+          <article>{parsedFileContents}</article>
         </section>
       </ScrollArea>
     </div>

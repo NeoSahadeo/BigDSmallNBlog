@@ -1,19 +1,14 @@
 import type { Metadata } from "next"
-import { Zilla_Slab } from "next/font/google"
-import { Roboto_Mono } from "next/font/google"
+import { Chakra_Petch, Maven_Pro, Overpass_Mono, Play } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const zilla_slab = Zilla_Slab({
-  weight: "300",
-  subsets: ["latin"],
-})
-const roboto_mono = Roboto_Mono({
-  subsets: ["latin"],
-  variable: "--font-roboto-mono",
-})
+const overpass_mono = Overpass_Mono({ weight: "400", subsets: ["latin"] })
+const play = Play({ weight: "400", subsets: ["latin"] })
+const chakra_petch = Chakra_Petch({ weight: "400", subsets: ["latin"] })
+const maven_pro = Maven_Pro({ weight: "400", subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Big D Small N",
@@ -25,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${zilla_slab.className} dark:text-gray-300`}>
+      <body className={`${maven_pro.className} dark:text-gray-300`}>
         <ThemeProvider attribute="class" defaultTheme="system">
           <div className="flex flex-col h-screen gap-5">
             <Header />
