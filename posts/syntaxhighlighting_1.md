@@ -131,7 +131,7 @@ export default function Page(){
     console.log(codeBlocks.length)
     for (let index = 0; index < codeBlocks.length; index++){
       codeBlocks[index].innerHTML = hljs.highlightAuto(
-        codeBlocks[index].innerHTML
+        codeBlocks[index].innerText
       ).value
     }
     setContentState(dom.querySelector('body').innerHTML)
