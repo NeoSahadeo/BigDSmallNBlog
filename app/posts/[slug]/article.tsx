@@ -1,10 +1,14 @@
 'use client'
-import { useState, useEffect, createElement } from 'react'
+import { useState, useEffect } from 'react'
 import hljs from 'highlight.js'
+import { GrayMatterFile } from 'gray-matter'
 import '@/public/tomorrow-night-bright.css'
 
+interface CustomElement extends Element {
+  innerText: string
+}
 
-export default function Article({matterResult, content}) {
+export default function Article({matterResult, content}: {matterResult: GrayMatterFile<string>, content: string} ) {
   /* I don't know what holy lord helped my hands write this. I ain't 
      changing it any time soon. :''')
   */
@@ -13,15 +17,14 @@ export default function Article({matterResult, content}) {
   useEffect(()=>{
     const parser = new DOMParser();
     const dom = parser.parseFromString(contentState, "text/html")
-    const codeBlocks = dom.querySelectorAll('pre > code')
-    console.log(codeBlocks)
+    const codeBlocks: NodeListOf<CustomElement> = dom.querySelectorAll('pre > code')
     for (let index = 0; index < codeBlocks.length; index++){
       let highlighted = hljs.highlightAuto(
         codeBlocks[index].innerText
       ).value
       codeBlocks[index].innerHTML = highlighted
     }
-    setContentState(dom.querySelector('body').innerHTML)
+    setContentState(dom.querySelector('body')?.innerHTML || '')
   }, [])
 
   return (
