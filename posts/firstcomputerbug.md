@@ -1,7 +1,7 @@
 ---
 author: Neo Sahadeo
 description: The first computer bug was a moth!
-date: '2024-01-26'
+date: '26-01-2024'
 title: The First Computer Bug
 categories: ['story', 'interesting']
 ---
