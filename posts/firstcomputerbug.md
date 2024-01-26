@@ -1,7 +1,7 @@
 ---
 author: Neo Sahadeo
 description: The first computer bug was a moth!
-date: '2024-01-26'
+date: '26-01-2024'
 title: The First Computer Bug
 categories: ['story', 'interesting']
 ---
@@ -18,13 +18,13 @@ print(9+10)
 We've all been there. After painstakingly transcribing a program from the deepest abysses of our brain, we hit run and <span style="font-weight: bold">BAM!</span> We get a bug.
 <br/>
 <br/>
-Bugs are annoying at best and soul crushing at worst. But have you ever thought about the origin of terminology bug?
+Bugs are annoying at best and soul crushing at worst. But have you ever thought about the origin of the terminology 'bug'?
 
 ### The Origin of the word *Bug* 
 Way back when, computers were the size of small houses. A computer by the title of Mark II at Harvard University was, by assumption, performing operations incorrectly (NA, Log Book With Computer Bug).
  <br>
 <br>
-Upon further investigation a moth was found in the circuitry. This bug was taped into a book and was recorded as the first ever bug.
+Upon further investigation a moth was found in the circuitry. This bug was taped into a book and was recorded as the first ever bug. And the name stuck. Today we use the words 'bug' and 'debug' in our software. I'm just glad they didn't call it moth.
 <br><br>
 
 <img src="https://ids.si.edu/ids/deliveryService?id=NMAH-NMAH2000-03035&max=600" title="Bug in Log Book by National Museum of American History">
