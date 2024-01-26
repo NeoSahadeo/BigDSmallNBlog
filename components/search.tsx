@@ -13,10 +13,10 @@ const search = (e:BaseSyntheticEvent, posts: Post[]) => {
   const value = new RegExp( e.target.value, 'gi')
   return posts.filter(post => {
     return (
-    post.title.match(value) || 
-    post.description.match(value) ||
-    post.date.match(value) ||
-    post.categories.some(element => element.match(value))
+    post.title?.match(value) || 
+    post.description?.match(value) ||
+    post.date?.match(value) ||
+    post.categories?.some(element => element.match(value))
     )
   })
 }

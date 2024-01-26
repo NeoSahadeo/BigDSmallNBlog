@@ -5,11 +5,8 @@ import styles from './page.module.css'
 import { useState } from 'react';
 import { Post } from '@/utils/marky';
 
-type HomeProps = {
-  posts: Post[]
-}
 
-export default function Home({posts}: HomeProps) {
+export default function Home({posts}: {posts: Post[]}) {
   const [postsToDisplay, setPostsToDisplay] = useState(posts)
     return (
         <main className='pl-4 pr-4 sm:pl-0 sm:pr-0'>
@@ -37,7 +34,7 @@ export default function Home({posts}: HomeProps) {
                 </li>
                 ) 
             })}
-  </ul>
+        </ul>
     </section>
     </main>
     );

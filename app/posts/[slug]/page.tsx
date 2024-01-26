@@ -5,12 +5,11 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Article from './article'
+import { Post } from '@/utils/marky';
 
 export function generateStaticParams() {
-  let posts = GetSortedPosts()
-  return posts.map(post=>{
-    return{slug:post.id}
-  })
+  let posts: Post[] = GetSortedPosts()
+  return posts.map(post=> ({slug:post.id}))
 }
 
 export default async function generatePage({ params }: { params: { slug: string } }) {

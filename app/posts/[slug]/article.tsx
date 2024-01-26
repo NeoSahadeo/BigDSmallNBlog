@@ -1,10 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { highlighter } from '@/utils/highlighter'
+import { GrayMatterFile } from 'gray-matter'
 
-interface CustomElement extends Element {
-  innerText: string
-}
 
 export default function Article({matterResult, content}: {matterResult: GrayMatterFile<string>, content: string} ) {
   /* I don't know what holy lord helped my hands write this. I ain't 
