@@ -1,7 +1,7 @@
 ---
 author: Neo Sahadeo
 description: The first computer bug was a moth!
-date: 2024-01-26
+date: '2024-01-26'
 title: The First Computer Bug
 categories: ['story', 'interesting']
 ---
@@ -29,9 +29,6 @@ Upon further investigation a moth was found in the circuitry. This bug was taped
 
 <img src="https://ids.si.edu/ids/deliveryService?id=NMAH-NMAH2000-03035&max=600" title="Bug in Log Book by National Museum of American History">
 <br>
-
-#### In the End
-The word 'bug' and 'debug' are frequently using in programming terminology.
 
 ######
 
