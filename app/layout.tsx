@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider"
+import '@/public/tomorrow-night-bright.css'
 
 const zilla_slab = Zilla_Slab({
   weight: '300', 
