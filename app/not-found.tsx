@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Custom404() {
+export default async function Custom404() {
   return (
     <main>
       <h1>404 - Page Not Found</h1>
