@@ -17,19 +17,27 @@ export default function Home({posts}: {posts: Post[]}) {
         <br/>
         <ul id='blogPosts' className={styles.ul}>
         {postsToDisplay.map((post: Post) => {
+          const {
+            id,
+            author,
+            description,
+            title,
+            categories,
+            date,
+          } = post
             return (
-                <li className={`${styles.li} `} key={post.id}>
-                  <Link className='flex flex-col' href={'posts/'+post.id}>
+                <li className={`${styles.li} `} key={id}>
+                  <Link className='flex flex-col' href={'posts/'+id}>
                     <span className='justify-between flex w-100'>
                     <span className='font-light'>
-                    {post.title}
+                    {title}
                     </span>            
                     <span>
-                    {post.date}
+                    {date}
                     </span>
                     </span>
                     <span className='italic mt-1'>
-                    {post.description}
+                    {description}
                     </span>
                   </Link>
                 </li>

@@ -13,10 +13,8 @@ export function generateStaticParams() {
 }
 
 export default async function generatePage({ params }: { params: { slug: string } }) {
-  const fullPath = path.join(postsDirectory, params.slug)+'.md'
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const fileContents = fs.readFileSync(path.join(postsDirectory, params.slug)+'.md', 'utf8')
   const matterResult = matter(fileContents)
-  const content: string = await marked.parse(matterResult.content)
-
-  return <Article content={content} matterResult={matterResult} />
+  matterResult['content'] = await marked.parse(matterResult.content)
+  return <Article matterResult={matterResult} />
 }

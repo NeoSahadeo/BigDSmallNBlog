@@ -133,10 +133,6 @@ pre {
 }
 blockquote {
   padding: 1rem 1rem 1rem 1rem;
-/*   border-radius: 0.2rem; */
-  /* -webkit-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.51);
-  -moz-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.51);
-  box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.51); */
   margin: 0.3rem 0;
   border-left: 0.3rem solid var(--default-primary-light);
 }

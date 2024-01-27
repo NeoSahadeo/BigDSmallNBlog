@@ -2,9 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+// Update the Post interface to change page contents
 export interface Post {
   id: string,
   date: string,
+  author: string,
   title: string,
   description: string,
   categories: string[],
@@ -17,35 +19,17 @@ export default function GetSortedPosts(): Post[] {
    * Uses Nodejs fs to get all files and sort them based on date and markdown (file type); 
    * the directory is based on postsDirectory
    *
-   * @returns Type:post array
+   * @returns Type:Post array
    *
    */
-  let filenames: string[] = fs.readdirSync(postsDirectory)
-  filenames = filenames.filter(element => element.endsWith('.md'))
-  
-  let allPostData: Post[] = filenames.map((filename) => {
-    const id: string = filename.replace(/\.md$/, '')
-    const fullPath: string = path.join(postsDirectory, filename)
-    const fileContents: string = fs.readFileSync(fullPath, 'utf8')
-    const matterResult = matter(fileContents).data
-
-    // Needs to be definite I think. Because of static params
-    return {
-      id,
-      date: matterResult.date,
-      title: matterResult.title,
-      description: matterResult.description,
-      categories: matterResult.categories,
-    }
-  })
-  
-  // sort dates, newest to oldest.
-  allPostData = allPostData.sort((a: Post, b: Post)=>{
-    if (a.date < b.date){
-      return 1
-    }
-    return -1
-  })
-
-  return allPostData
+  return fs.readdirSync(postsDirectory)
+  .filter(filename => filename.endsWith('.md')
+   ).map((filename) => {
+    const id = filename.replace(/\.md$/, '')
+    const fullPath = path.join(postsDirectory, filename)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const matterResult = matter(fileContents).data as Post
+    matterResult['id'] = id
+    return matterResult
+  }).sort((a: Post, b: Post) => a.date < b.date ? 1 : -1)
 }
