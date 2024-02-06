@@ -74,16 +74,6 @@
     @apply bg-background text-foreground;
   }
 }
-* {
-  --default-primary-light: #363636;
-}
-
-body {
-  color: var(--default-primary-light);
-}
-.body-dark {
-  color: white !important;
-}
 hr {
   padding-top: 0.05rem;
   margin-bottom: 1rem;
@@ -97,33 +87,11 @@ h6 {
   font-weight: bold;
   margin: 1rem 0 0.1rem 0rem;
 }
-h1 {
-  font-size: 2.4rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.7rem;
-}
-h4 {
-  font-size: 1.4rem;
-}
-h5 {
-  font-size: 1.2rem;
-}
-h6 {
-  font-size: 1rem;
-}
 
 .white {
   fill: white;
 }
 
-pre,
-code {
-  font-family: var(--font-roboto-mono);
-}
 pre {
   border: 1px solid;
   padding: 0.4rem 0.4rem;
